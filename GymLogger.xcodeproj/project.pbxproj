@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63101B1E25532CBE002CCEE0 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63101B1D25532CBE002CCEE0 /* ItemCell.swift */; };
 		63232D752549C1B9007C5368 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63232D742549C1B9007C5368 /* AppDelegate.swift */; };
 		63232D772549C1B9007C5368 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63232D762549C1B9007C5368 /* SceneDelegate.swift */; };
 		63232D792549C1B9007C5368 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63232D782549C1B9007C5368 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		63101B1D25532CBE002CCEE0 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		63232D712549C1B9007C5368 /* GymLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63232D742549C1B9007C5368 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63232D762549C1B9007C5368 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				63232D7D2549C1B9007C5368 /* GymLogger.xcdatamodeld */,
 				63232D8F2549C356007C5368 /* Item.swift */,
 				63232D922549C42B007C5368 /* ItemStore.swift */,
+				63101B1D25532CBE002CCEE0 /* ItemCell.swift */,
 			);
 			path = GymLogger;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63101B1E25532CBE002CCEE0 /* ItemCell.swift in Sources */,
 				63232D8D2549C24A007C5368 /* ItemsViewController.swift in Sources */,
 				63232D792549C1B9007C5368 /* ViewController.swift in Sources */,
 				63232D752549C1B9007C5368 /* AppDelegate.swift in Sources */,
