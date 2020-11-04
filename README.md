@@ -8,7 +8,7 @@ with the details of each lifts including PR and sets & reps.
 
 ## Installation
 
-There isn't any additional things needed to install the project. Just download and run.
+This project was made on XCode Version 12.1 (12A7403) using Swift 5
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)

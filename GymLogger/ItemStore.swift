@@ -17,12 +17,12 @@ class ItemStore {
     }
     
     
-    init() {
-    for _ in 0..<5 {
-            createItem()
-            print("ASDF!")
-        }
-    }
+//    init() {
+//    for _ in 0..<5 {
+//            createItem()
+//            print("ASDF!")
+//        }
+//    }
     
     
 }
