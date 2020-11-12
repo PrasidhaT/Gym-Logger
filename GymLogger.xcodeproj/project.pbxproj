@@ -18,6 +18,7 @@
 		63232D8D2549C24A007C5368 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63232D8C2549C24A007C5368 /* ItemsViewController.swift */; };
 		63232D902549C356007C5368 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63232D8F2549C356007C5368 /* Item.swift */; };
 		63232D932549C42B007C5368 /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63232D922549C42B007C5368 /* ItemStore.swift */; };
+		63D07DD2255D406A00D2A786 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D07DD1255D406A00D2A786 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		63232D8C2549C24A007C5368 /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 		63232D8F2549C356007C5368 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		63232D922549C42B007C5368 /* ItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
+		63D07DD1255D406A00D2A786 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				63232D8F2549C356007C5368 /* Item.swift */,
 				63232D922549C42B007C5368 /* ItemStore.swift */,
 				63101B1D25532CBE002CCEE0 /* ItemCell.swift */,
+				63D07DD1255D406A00D2A786 /* DetailViewController.swift */,
 			);
 			path = GymLogger;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63D07DD2255D406A00D2A786 /* DetailViewController.swift in Sources */,
 				63101B1E25532CBE002CCEE0 /* ItemCell.swift in Sources */,
 				63232D8D2549C24A007C5368 /* ItemsViewController.swift in Sources */,
 				63232D792549C1B9007C5368 /* ViewController.swift in Sources */,
