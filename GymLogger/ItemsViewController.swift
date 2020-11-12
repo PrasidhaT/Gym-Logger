@@ -11,8 +11,8 @@ class ItemsViewController: UITableViewController {
     
     var itemStore: ItemStore!
     
-    @IBAction func addNewItem(_ sender: UIButton) {
-//        // Make a new index path for the 0th section, last row
+    @IBAction func addNewItem(_ sender: UIBarButtonItem) {
+        // Make a new index path for the 0th section, last row
 //        let lastRow = tableView.numberOfRows(inSection: 0)
 //        let indexPath = IndexPath(row: lastRow, section: 0)
 //        // Insert this new row into the table
@@ -26,29 +26,29 @@ class ItemsViewController: UITableViewController {
            tableView.insertRows(at: [indexPath], with: .automatic)
         }
     }
-    @IBAction func toggleEditingMode(_ sender: UIButton) {
-        // If you are currently in editing mode...
-        if isEditing {
-           // Change text of button to inform user of state
-           sender.setTitle("Edit", for: .normal)
-           // Turn off editing mode
-           setEditing(false, animated: true)
-        } else {
-           // Change text of button to inform user of state
-           sender.setTitle("Done", for: .normal)
-           // Enter editing mode
-           setEditing(true, animated: true)
-        }
-    }
-    
+//    @IBAction func toggleEditingMode(_ sender: UIButton) {
+//        // If you are currently in editing mode...
+//        if isEditing {
+//           // Change text of button to inform user of state
+//           sender.setTitle("Edit", for: .normal)
+//           // Turn off editing mode
+//           setEditing(false, animated: true)
+//        } else {
+//           // Change text of button to inform user of state
+//           sender.setTitle("Done", for: .normal)
+//           // Enter editing mode
+//           setEditing(true, animated: true)
+//        }
+//    }
+//
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let statusBarHeight = UIApplication.shared.statusBarFrame.height
-        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
-        tableView.contentInset = insets
-        tableView.scrollIndicatorInsets = insets
-        
+//        let statusBarHeight = UIApplication.shared.statusBarFrame.height
+//        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
+//        tableView.contentInset = insets
+//        tableView.scrollIndicatorInsets = insets
+//
 //        tableView.rowHeight = 65
         tableView.rowHeight = 65
         tableView.estimatedRowHeight = 65
@@ -69,6 +69,16 @@ class ItemsViewController: UITableViewController {
         default:
             preconditionFailure("Unexpected segue identifier.")
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        navigationItem.leftBarButtonItem = editButtonItem
     }
     
     
