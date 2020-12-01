@@ -16,9 +16,13 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var liftingDayField: UITextField!
     @IBOutlet var dateLabel: UILabel!
     
+    
     @IBAction func deleteItem(_ sender: UIBarButtonItem) {
-
+        
     }
+    
+    
+    
     var item: Item! {
         didSet {
             navigationItem.title = item.name
@@ -41,8 +45,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         nameField.text = item.name
-        weightField.text = item.serialNumber
-        liftingDayField.text = numberFormatter.string(from: NSNumber(value: item.valueInDollars))
+        weightField.text = item.liftingDay
+        liftingDayField.text = numberFormatter.string(from: NSNumber(value: item.weight))
         dateLabel.text = dateFormatter.string(from: item.dateCreated)
     }
     
@@ -51,12 +55,12 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         view.endEditing(true)
         // "Save" changes to item
         item.name = nameField.text ?? ""
-        item.serialNumber = weightField.text
+        item.liftingDay = weightField.text
         if let valueText = liftingDayField.text,
            let value = numberFormatter.number(from: valueText) {
-            item.valueInDollars = value.intValue
+            item.weight = value.intValue
         } else {
-        item.valueInDollars = 0 }
+        item.weight = 0 }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

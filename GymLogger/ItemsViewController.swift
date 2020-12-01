@@ -98,11 +98,11 @@ class ItemsViewController: UITableViewController {
             let item = itemStore.allItems[indexPath.row]
             
 //            cell.textLabel?.text = item.name
-//            cell.detailTextLabel?.text = "$\(item.valueInDollars)"
+//            cell.detailTextLabel?.text = "$\(item.weight)"
             // Configure the cell with the Item
             cell.nameLabel.text = item.name
-            cell.exerciseGroupLabel.text = item.serialNumber
-            cell.currentWeightLabel.text = "$\(item.valueInDollars)"
+            cell.exerciseGroupLabel.text = item.liftingDay
+            cell.currentWeightLabel.text = "\(item.weight) Lbs"
             
             return cell
     }
@@ -110,7 +110,6 @@ class ItemsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView,
                             commit editingStyle: UITableViewCell.EditingStyle,
         forRowAt indexPath: IndexPath) {
-            // If the table view is asking to commit a delete command...
             if editingStyle == .delete {
                 let item = itemStore.allItems[indexPath.row]
                 
