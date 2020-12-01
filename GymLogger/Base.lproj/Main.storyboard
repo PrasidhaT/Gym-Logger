@@ -166,7 +166,18 @@
                             <constraint firstItem="RSD-0G-dBX" firstAttribute="leading" secondItem="lzD-AO-QzS" secondAttribute="leadingMargin" constant="8" id="upF-cj-lCQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="BAC-hL-ec1"/>
+                    <navigationItem key="navigationItem" id="BAC-hL-ec1">
+                        <barButtonItem key="rightBarButtonItem" image="trash" catalog="system" style="plain" id="VKd-Qk-MZY">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Vsf-T7-EOm">
+                                <rect key="frame" x="302" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <connections>
+                                <action selector="deleteItem:" destination="ZCw-fU-QlN" id="2YL-yC-OwG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="dateLabel" destination="PAa-TN-xpG" id="6LB-bF-xJA"/>
                         <outlet property="liftingDayField" destination="CEo-T7-VL1" id="v7e-Jc-0fT"/>
@@ -203,6 +214,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="trash" catalog="system" width="121" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

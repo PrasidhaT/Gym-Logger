@@ -10,6 +10,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    let itemStore = ItemStore()
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -17,13 +18,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
-        // Create an ItemStore
-        let itemStore = ItemStore()
+//        // Create an ItemStore
+//        let itemStore = ItemStore()
         // Access the ItemsViewControlller and set its item store
 //        let itemsController = window!.rootViewController as! ItemsViewController
         let navController = window!.rootViewController as! UINavigationController
         let itemsController = navController.topViewController as! ItemsViewController
         itemsController.itemStore = itemStore
+        print("whats up!")
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -55,6 +57,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Save changes in the application's managed object context when the application transitions to the background.
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+        
+        let success = itemStore.saveChanges()
+        if (success) {
+           print("Saved the log")
+        } else {
+           print("Could not save the log")
+        }
     }
 
 

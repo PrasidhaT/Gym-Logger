@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+
 class DetailViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var nameField: UITextField!
@@ -14,6 +16,9 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var liftingDayField: UITextField!
     @IBOutlet var dateLabel: UILabel!
     
+    @IBAction func deleteItem(_ sender: UIBarButtonItem) {
+
+    }
     var item: Item! {
         didSet {
             navigationItem.title = item.name
