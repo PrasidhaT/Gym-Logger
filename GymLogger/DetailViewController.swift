@@ -18,8 +18,16 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func deleteItem(_ sender: UIBarButtonItem) {
-        
+        guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let sceneDelegate = scene.delegate as? SceneDelegate
+        else {
+            return
+        }
+        let itemStore = sceneDelegate.itemStore
+        itemStore.removeItem(item)
+        self.navigationController?.popViewController(animated: true)
     }
+
     
     
     

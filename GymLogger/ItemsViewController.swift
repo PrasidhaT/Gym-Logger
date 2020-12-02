@@ -26,33 +26,43 @@ class ItemsViewController: UITableViewController {
            tableView.insertRows(at: [indexPath], with: .automatic)
         }
     }
-//    @IBAction func toggleEditingMode(_ sender: UIButton) {
-//        // If you are currently in editing mode...
-//        if isEditing {
-//           // Change text of button to inform user of state
-//           sender.setTitle("Edit", for: .normal)
-//           // Turn off editing mode
-//           setEditing(false, animated: true)
-//        } else {
-//           // Change text of button to inform user of state
-//           sender.setTitle("Done", for: .normal)
-//           // Enter editing mode
-//           setEditing(true, animated: true)
-//        }
-//    }
-//
+    
+    @IBAction func loadCSV(_ sender: UIBarButtonItem) {
+        
+        var exerciseInfos = [String]()
+
+        let url = URL(string: "https://raw.githubusercontent.com/PrasidhaT/Gym-Logger/main/csvToLoadData.csv")!
+
+        let task = URLSession.shared.downloadTask(with: url) {localURL, urlResponse, error in
+            if let localURL = localURL {
+                if let string = try? String(contentsOf: localURL) {
+                    let lines = string.split(separator: "\n")
+                    var x = 1
+                    for line in lines {
+                        exerciseInfos.append(String(line))
+                        print(exerciseInfos)
+                    }
+                }
+            }
+        }
+        print(exerciseInfos)
+
+        
+        task.resume()
+        
+
+    }
+    
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let statusBarHeight = UIApplication.shared.statusBarFrame.height
-//        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
-//        tableView.contentInset = insets
-//        tableView.scrollIndicatorInsets = insets
-//
-//        tableView.rowHeight = 65
         tableView.rowHeight = 65
         tableView.estimatedRowHeight = 65
     }
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // If the triggered segue is the "showItem" segue
