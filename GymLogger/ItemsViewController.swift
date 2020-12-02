@@ -28,35 +28,51 @@ class ItemsViewController: UITableViewController {
     }
     
     @IBAction func loadCSV(_ sender: UIBarButtonItem) {
-        
-        var exerciseInfos = [String]()
 
-        let url = URL(string: "https://raw.githubusercontent.com/PrasidhaT/Gym-Logger/main/csvToLoadData.csv")!
-
-        let task = URLSession.shared.downloadTask(with: url) {localURL, urlResponse, error in
-            if let localURL = localURL {
-                if let string = try? String(contentsOf: localURL) {
-                    let lines = string.split(separator: "\n")
-                    var x = 1
-                    for line in lines {
-                        exerciseInfos.append(String(line))
-                        print(exerciseInfos)
-                    }
-                }
+        for exercise in CSVstring{
+            let exerciseArray = exercise.components(separatedBy: ",")
+            print(exerciseArray)
+            let newItem = Item.init(name: exerciseArray[0], liftingDay: exerciseArray[1], weight: Int(exerciseArray[2]) ?? 130)
+            itemStore.allItems.append(newItem)
+            if let index = itemStore.allItems.firstIndex(of: newItem) {
+               let indexPath = IndexPath(row: index, section: 0)
+               // Insert this new row into the table
+               tableView.insertRows(at: [indexPath], with: .automatic)
             }
         }
-        print(exerciseInfos)
-
-        
-        task.resume()
-        
 
     }
     
     
+    var CSVstring = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let url = URL(string: "https://raw.githubusercontent.com/PrasidhaT/Gym-Logger/main/csvToLoadData.csv")!
+
+        let task = URLSession.shared.downloadTask(with: url) { localURL, urlResponse, error in
+            if let localURL = localURL {
+                if let string = try? String(contentsOf: localURL) {
+                    let array = string.components(separatedBy: "\n")
+                    let exercise1 = (array[0]).dropLast(1)
+                    let exercise2 = (array[1]).dropLast(1)
+                    let exercise3 = (array[2]).dropLast(1)
+                    let exercise4 = (array[3]).dropLast(1)
+                    let exercise5 = (array[4]).dropLast(1)
+                    let exercise6 = (array[5]).dropLast(1)
+                    self.CSVstring.append(String(exercise1))
+                    self.CSVstring.append(String(exercise2))
+                    self.CSVstring.append(String(exercise3))
+                    self.CSVstring.append(String(exercise4))
+                    self.CSVstring.append(String(exercise5))
+                    self.CSVstring.append(String(exercise6))
+
+                }
+            }
+        }
+
+        task.resume()
         
         tableView.rowHeight = 65
         tableView.estimatedRowHeight = 65
