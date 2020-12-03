@@ -70,6 +70,7 @@
                             <barButtonItem systemItem="add" id="uUm-Q5-7DP">
                                 <connections>
                                     <action selector="addNewItem:" destination="66W-v5-HZ5" id="ulY-ZO-BXM"/>
+                                    <segue destination="ZCw-fU-QlN" kind="show" identifier="showItemByAdding" id="ula-o7-7bm"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="Load CSV" id="jB8-Wa-a8s">
@@ -103,13 +104,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="358" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3WM-CB-1wR">
-                                                <rect key="frame" x="0.0" y="0.0" width="61.5" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="116" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5YP-S9-vUG">
-                                                <rect key="frame" x="61.5" y="0.0" width="296.5" height="34"/>
+                                                <rect key="frame" x="116" y="0.0" width="242" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
@@ -121,14 +122,14 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0WJ-SL-IXw">
                                         <rect key="frame" x="0.0" y="42" width="358" height="34"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Target" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q59-Cm-wbi">
-                                                <rect key="frame" x="0.0" y="0.0" width="61.5" height="34"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Target Muscles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q59-Cm-wbi">
+                                                <rect key="frame" x="0.0" y="0.0" width="116" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0wf-Hq-fBU">
-                                                <rect key="frame" x="61.5" y="0.0" width="296.5" height="34"/>
+                                                <rect key="frame" x="116" y="0.0" width="242" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -138,13 +139,13 @@
                                         <rect key="frame" x="0.0" y="84" width="358" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7a-a7-qdZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="53.5" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="108" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CEo-T7-VL1">
-                                                <rect key="frame" x="61.5" y="0.0" width="296.5" height="34"/>
+                                                <rect key="frame" x="116" y="0.0" width="242" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -224,6 +225,9 @@
             <point key="canvasLocation" x="318.84057971014494" y="361.60714285714283"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ula-o7-7bm"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="trash" catalog="system" width="121" height="128"/>
         <systemColor name="systemBackgroundColor">

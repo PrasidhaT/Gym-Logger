@@ -12,19 +12,19 @@ class ItemsViewController: UITableViewController {
     var itemStore: ItemStore!
     
     @IBAction func addNewItem(_ sender: UIBarButtonItem) {
-        // Make a new index path for the 0th section, last row
-//        let lastRow = tableView.numberOfRows(inSection: 0)
-//        let indexPath = IndexPath(row: lastRow, section: 0)
-//        // Insert this new row into the table
-//        tableView.insertRows(at: [indexPath], with: .automatic)
-        // Create a new item and add it to the store
-        let newItem = itemStore.createItem()
-        // Figure out where that item is in the array
-        if let index = itemStore.allItems.firstIndex(of: newItem) {
-           let indexPath = IndexPath(row: index, section: 0)
-           // Insert this new row into the table
-           tableView.insertRows(at: [indexPath], with: .automatic)
-        }
+//        // Make a new index path for the 0th section, last row
+////        let lastRow = tableView.numberOfRows(inSection: 0)
+////        let indexPath = IndexPath(row: lastRow, section: 0)
+////        // Insert this new row into the table
+////        tableView.insertRows(at: [indexPath], with: .automatic)
+//        // Create a new item and add it to the store
+//        let newItem = itemStore.createItem()
+//        // Figure out where that item is in the array
+//        if let index = itemStore.allItems.firstIndex(of: newItem) {
+//           let indexPath = IndexPath(row: index, section: 0)
+//           // Insert this new row into the table
+//           tableView.insertRows(at: [indexPath], with: .automatic)
+//        }
     }
     
     @IBAction func loadCSV(_ sender: UIBarButtonItem) {
@@ -40,7 +40,6 @@ class ItemsViewController: UITableViewController {
                tableView.insertRows(at: [indexPath], with: .automatic)
             }
         }
-
     }
     
     
@@ -78,10 +77,7 @@ class ItemsViewController: UITableViewController {
         tableView.estimatedRowHeight = 65
     }
     
-    
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // If the triggered segue is the "showItem" segue
         switch segue.identifier {
         case "showItem"?:
             // Figure out which row was just tapped
@@ -92,6 +88,18 @@ class ItemsViewController: UITableViewController {
                     = segue.destination as! DetailViewController
                 detailViewController.item = item
             }
+        case "showItemByAdding"?:
+            let newItem = Item.init(name: "", liftingDay: "", weight: 0)
+            itemStore.allItems.append(newItem)
+            if let index = itemStore.allItems.firstIndex(of: newItem) {
+                let path = IndexPath(row: index, section: 0)
+                tableView.insertRows(at: [path], with: .automatic)
+            }
+            let indexNum = itemStore.allItems.count - 1
+            let item = itemStore.allItems[indexNum]
+            let detailViewController = segue.destination as! DetailViewController
+            detailViewController.item = item
+
         default:
             preconditionFailure("Unexpected segue identifier.")
         }
